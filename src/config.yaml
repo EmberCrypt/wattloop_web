@@ -1,24 +1,24 @@
 site:
-  name: AstroWind
-  site: 'https://astrowind.vercel.app'
+  name: Wattloop
+  site: 'https://wattloop.com'
   base: '/'
   trailingSlash: false
 
-  googleSiteVerificationId: orcPxI47GSa-cRvY11tUe6iGg2IO_RPvnA1q95iEM3M
+#  googleSiteVerificationId: orcPxI47GSa-cRvY11tUe6iGg2IO_RPvnA1q95iEM3M
 
 # Default SEO metadata
 metadata:
   title:
-    default: AstroWind
-    template: '%s — AstroWind'
-  description: "\U0001F680 Suitable for Startups, Small Business, Sass Websites, Professional Portfolios, Marketing Websites, Landing Pages & Blogs."
+    default: Wattloop
+    template: '%s — Wattloop'
+  description: "\U0001F680 "
   robots:
     index: true
     follow: true
   openGraph:
-    site_name: AstroWind
+    site_name: Wattloop
     images:
-      - url: '~/assets/images/default.png'
+      - url: '~/assets/images/default.png' # TODO replace this
         width: 1200
         height: 628
     type: website
@@ -33,7 +33,7 @@ i18n:
 
 apps:
   blog:
-    isEnabled: true
+    isEnabled: false
     postsPerPage: 6
 
     post:
@@ -43,24 +43,24 @@ apps:
         index: true
 
     list:
-      isEnabled: true
+      isEnabled: false
       pathname: 'blog' # Blog main path, you can change this to "articles" (/articles)
       robots:
         index: true
 
     category:
-      isEnabled: true
+      isEnabled: false
       pathname: 'category' # Category main path /category/some-category, you can change this to "group" (/group/some-category)
       robots:
         index: true
 
     tag:
-      isEnabled: true
+      isEnabled: false
       pathname: 'tag' # Tag main path /tag/some-tag, you can change this to "topics" (/topics/some-category)
       robots:
         index: false
 
-    isRelatedPostsEnabled: true
+    isRelatedPostsEnabled: false
     relatedPostsCount: 4
 
 analytics:
