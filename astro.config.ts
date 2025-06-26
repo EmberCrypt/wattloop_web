@@ -24,7 +24,7 @@ const whenExternalScripts = (items: (() => AstroIntegration) | (() => AstroInteg
 export default defineConfig({
   output: 'static',
   site: 'http://www.wattloop.com',
-  base: '/',
+  base: '/wattloop_web',
 
   integrations: [
     tailwind({
