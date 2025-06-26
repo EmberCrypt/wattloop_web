@@ -3,6 +3,15 @@
 export const headerData = {
   links: [
   ],
+  actions: [
+    {
+	variant: 'primary',
+	text: 'Contact us',
+	href: 'mailto:info@wattloop.com',
+	target: '_blank',
+	icon: 'tabler:mail',
+    }
+  ]
 };
 
 export const footerData = {
