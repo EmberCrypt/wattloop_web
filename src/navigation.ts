@@ -2,13 +2,15 @@
 
 export const headerData = {
   links: [
+      {text: 'Home', href: '/'}, 
+      {text: 'About us', href: '/about'}, 
   ],
   actions: [
     {
 	variant: 'primary',
 	text: 'Contact us',
-	href: 'mailto:info@wattloop.com',
-	target: '_blank',
+	href: '/contact',
+	target: '_self',
 	icon: 'tabler:mail',
     }
   ]

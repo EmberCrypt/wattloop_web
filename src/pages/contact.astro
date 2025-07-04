@@ -1,0 +1,95 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import ContactUs from '~/components/widgets/Contact.astro';
+
+const metadata = {
+  title: 'Contact',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- HeroText Widget ******************* -->
+
+  <HeroText tagline="Contact" title="Get in touch now" />
+
+  <ContactUs
+    id="contact-form"
+    action="https://formspree.io/f/myzjvlew"
+    method="POST"
+    inputs={[
+      {
+        type: 'text',
+        name: 'name',
+        label: 'Name',
+      },
+      {
+        type: 'email',
+        name: 'email',
+        label: 'Email',
+      },
+      {
+      type: 'text',
+      name: 'subject',
+      label: 'Subject',
+      },
+      {
+        type: "hidden" ,
+        name:"_redirect", 
+        value: "/thank-you",
+      },
+      {
+        type: "hidden" ,
+        name:"_failure", 
+        value: "/oops",
+      }
+    ]}
+    textarea={{
+      label: 'Message',
+    }}
+    disclaimer={{
+      label:
+        'By submitting this contact form, you acknowledge and agree to the collection of your personal information.',
+    }}
+  />
+
+</Layout>
+
+<script>
+  const form = document.querySelector('form'); // or use any other selector you like
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    console.log("Got form submission!!");
+    const formData = new FormData(form);
+
+    
+    try {
+      const response = await fetch(form.action, {
+        method: form.method,
+        headers: {
+          'Accept': 'application/json',
+        },
+        body: formData,
+      });
+
+      if (response.ok) {
+        // If form is successfully submitted, redirect to the specified URL
+        const redirectUrl = form.querySelector('input[name="_redirect"]').value;
+        window.location.href = redirectUrl;
+      } else {
+        // Handle error response from Formspree
+        const errorData = await response.json();
+        console.log(errorData.errors?.[0]?.message || 'Form submission failed.');
+        // Redirect to failure page
+        const redirectUrl = form.querySelector('input[name="_failure"]').value;
+        window.location.href = redirectUrl;
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      const redirectUrl = form.querySelector('input[name="_failure"]').value;
+      window.location.replace(redirectUrl);
+    }
+  });
+</script>

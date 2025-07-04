@@ -1,0 +1,57 @@
+---
+import Features2 from '~/components/widgets/Features2.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Note from '~/components/widgets/Note.astro';
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'About us',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero
+    tagline="We are"
+    image={{
+      src: '~/assets/images/wattloop.jpg',
+      alt: 'Wattloop at the Battery Recycling Expo',
+    }}
+  >
+    <Fragment slot="title">
+      <span class="text-accent dark:text-white">Wattloop</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+        We unlock the hidden potential in EV batteries through intelligent data analysis. 
+        By transforming complex BMS data into instant, actionable battery certificates, we enable true circularity - giving every battery a fair chance at a second life before recycling. 
+        Because the most sustainable battery is the one that's already made.
+    </Fragment>
+  </Hero>
+
+  <!-- Note Widget ******************* -->
+
+  <Note title="Our Belief?" description="Every battery has more to give" />
+
+  <!-- Stats Widget ****************** -->
+  <Features2
+    tagline="Our team"
+    title="Two brothers join forces to reintroduce trust to the full EV battery lifecycle"
+    columns={2}
+    items={[
+      {
+        title: 'Dr. Jan Van den Herrewegen',
+        description:
+          'Jan, PhD in Automotive Security from the University of Birmingham, is the creative visionary and tech expert behind our innovation. With a decade of research and consulting experience, he brings cutting-edge ideas to life with precision and scalability.',
+      },
+      {
+        title: 'Tim Van den Herrewegen',
+        description:
+          'Tim has 15+ years of experience in launching and scaling software products at multinationals and scale-ups. With a background in economics and a strong track record in team leadership and market strategy, he turns great ideas into successful business.',
+      },
+    ]}
+  />
+
+
+</Layout>

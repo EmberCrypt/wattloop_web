@@ -2,12 +2,13 @@
 import Layout from '~/layouts/PageLayout.astro';
 
 import Hero from '~/components/widgets/Hero.astro';
-import Note from '~/components/widgets/Note.astro';
 import Features from '~/components/widgets/Features.astro';
+import Features2 from '~/components/widgets/Features.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
+import Brands from '~/components/widgets/Brands.astro';
 
 const metadata = {
-  title: 'Wattloop — Actionable Battery Insights.',
+  title: 'Wattloop',
   ignoreTitleTemplate: true,
 };
 ---
@@ -27,21 +28,49 @@ const metadata = {
 
     <Fragment slot="subtitle">
       <span class="hidden sm:inline">
-        <span class="font-semibold">Wattloop</span> maximises value across the full EV battery lifecycle 
+        We maximise <span class="font-semibold">value</span> across the full EV battery lifecycle 
       </span>
     </Fragment>
   </Hero>
 
-  <!-- Note Widget ******************* -->
 
-  <Note title="Our Belief?" description="Every battery has more to give" />
+   <Features2
+    title="The \u20AC1 billion EV battery <span class='font-semibold text-accent'>problem</span>"
+    subtitle=""
+    items={[
+      {
+        title: 'Lack of trust',
+        description:
+          'A lack of transparency about battery life expectancy & missing standards for EV battery longevity introduces market uncertainty. This makes the EV resale market suffer from a lack of trust.',
+        icon: 'tabler:car',
+      },
+      {
+        title: 'Black box',
+        description:
+          'End-of-first-life EV batteries are a black box which might either catch fire, could power a neighborhood for many more years, or has no life left at all. Which will it be?',
+        icon: 'tabler:question-mark',
+      },
+      {
+        title: 'Lack of data',
+        description:
+          'A lack of quality EV battery data makes the industry bleed money. Needless costly transports, unnecessary downcycling and regulatory uncertainty prevent the 2nd life market to reach its full potential',
+        icon: 'tabler:graph',
+      },
+    ]}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Features2>
+
+
 
   <!-- Features Widget *************** -->
 
   <Features
     id="features"
-    tagline="Products and Services"
-    title="Our Solutions"
+    tagline="What we do"
+    title="Our products and services"
     subtitle="To maximise a battery's value throughout its entire lifetime, we source the battery data directly from the BMS to where it matters most to you"
     items={[
       {
@@ -67,13 +96,32 @@ const metadata = {
         description:
     'Wattloop Battery Data Services delivers real world battery insights. Independent. Comparable. Actionable.',
         icon: 'tabler:chart-scatter',
-      },
+      }
     ]}
   />
 
-
-
-
+  <Brands
+      title="Trusted partners"
+      icons={[]}
+      images={[
+        {
+          src: '~/assets/images/circular_kickstart.png',
+          alt: 'Circular Kickstart',
+        },
+        {
+          src: '~/assets/images/vlaio.png',
+          alt: 'VLAIO',
+        },
+        {
+          src: '~/assets/images/vito.png',
+          alt: 'VITO',
+        },
+        {
+          src: '~/assets/images/starterslabo.jpg',
+          alt: 'Starterslabo',
+        },
+      ]}
+    />
 
 
   <!-- CallToAction Widget *********** -->
@@ -83,14 +131,14 @@ const metadata = {
       {
         variant: 'primary',
         text: 'Contact us',
-        href: 'mailto:info@wattloop.com',
-        target: '_blank',
+        href: '/contact',
+        target: '_self',
         icon: 'tabler:mail',
       },
     ]}
   >
     <Fragment slot="title">
-      Interested in unlocking the potential of your EV battery?
+      Unlock the full potential of your EV batteries now!
     </Fragment>
   </CallToAction>
 </Layout>
