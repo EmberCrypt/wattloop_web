@@ -37,6 +37,11 @@ const metadata = {
         type: "hidden" ,
         name:"_redirect", 
         value: "/thank-you",
+      },
+      {
+        type: "hidden" ,
+        name:"_failure", 
+        value: "/oops",
       }
     ]}
     textarea={{
@@ -76,11 +81,15 @@ const metadata = {
       } else {
         // Handle error response from Formspree
         const errorData = await response.json();
-        alert(errorData.errors?.[0]?.message || 'Form submission failed.');
+        console.log(errorData.errors?.[0]?.message || 'Form submission failed.');
+        // Redirect to failure page
+        const redirectUrl = form.querySelector('input[name="_failure"]').value;
+        window.location.href = redirectUrl;
       }
     } catch (error) {
       console.error('Error submitting form:', error);
-      alert('Failed to submit the form. Please try again later.');
+      const redirectUrl = form.querySelector('input[name="_failure"]').value;
+      window.location.replace(redirectUrl);
     }
   });
 </script>

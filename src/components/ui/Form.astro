@@ -9,7 +9,7 @@ const { inputs, textarea, disclaimer, button = 'Contact us', description = '', m
   {
     inputs &&
       inputs.map(
-        ({ type = 'text', name, label = '', autocomplete = 'on', placeholder = '' }) =>
+        ({ type = 'text', name, label = '', autocomplete = 'on', placeholder = '', value='' }) =>
           name && (
             <div class="mb-6">
               {label && (
@@ -20,6 +20,7 @@ const { inputs, textarea, disclaimer, button = 'Contact us', description = '', m
               <input
                 type={type}
                 name={name}
+                value={value}
                 id={name}
                 autocomplete={autocomplete}
                 placeholder={placeholder}

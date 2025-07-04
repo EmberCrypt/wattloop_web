@@ -5,9 +5,10 @@ import Hero from '~/components/widgets/Hero.astro';
 import Features from '~/components/widgets/Features.astro';
 import Features2 from '~/components/widgets/Features.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
+import Brands from '~/components/widgets/Brands.astro';
 
 const metadata = {
-  title: 'Wattloop — Actionable Battery Insights.',
+  title: 'Wattloop',
   ignoreTitleTemplate: true,
 };
 ---
@@ -99,6 +100,28 @@ const metadata = {
     ]}
   />
 
+  <Brands
+      title="Trusted partners"
+      icons={[]}
+      images={[
+        {
+          src: '~/assets/images/circular_kickstart.png',
+          alt: 'Circular Kickstart',
+        },
+        {
+          src: '~/assets/images/vlaio.png',
+          alt: 'VLAIO',
+        },
+        {
+          src: '~/assets/images/vito.png',
+          alt: 'VITO',
+        },
+        {
+          src: '~/assets/images/starterslabo.jpg',
+          alt: 'Starterslabo',
+        },
+      ]}
+    />
 
 
   <!-- CallToAction Widget *********** -->

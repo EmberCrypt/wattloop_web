@@ -3,9 +3,6 @@ import Features2 from '~/components/widgets/Features2.astro';
 import Hero from '~/components/widgets/Hero.astro';
 import Note from '~/components/widgets/Note.astro';
 import Layout from '~/layouts/PageLayout.astro';
-import { Image } from 'astro:assets';
-import ImageJan from '~/assets/images/wattloop.jpg';
-import Brands from '~/components/widgets/Brands.astro';
 
 const metadata = {
   title: 'About us',
@@ -57,26 +54,4 @@ const metadata = {
   />
 
 
-<Brands
-    title="Trusted partners"
-    icons={[]}
-    images={[
-      {
-        src: '~/assets/images/circular_kickstart.png',
-        alt: 'Circular Kickstart',
-      },
-      {
-        src: '~/assets/images/vlaio.png',
-        alt: 'VLAIO',
-      },
-      {
-        src: '~/assets/images/vito.svg',
-        alt: 'VITO',
-      },
-      {
-        src: '~/assets/images/starterslabo.jpg',
-        alt: 'Starterslabo',
-      },
-    ]}
-  />
 </Layout>
