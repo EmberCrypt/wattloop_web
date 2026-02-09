@@ -1,0 +1,87 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Image from '~/components/common/Image.astro';
+
+const metadata = {
+  title: 'Our Team',
+};
+
+const team = [
+  {
+    name: 'Dr. Jan Van den Herrewegen',
+    role: 'Co-founder & CEO',
+    image: '~/assets/images/jan_profile_cropped.jpg',
+    description: 'With a PhD in Automotive Security from the University of Birmingham and a decade of automotive consulting experience, Jan knows where the opportunities lie in the automotive industry. He is the creative visionary and tech expert with a decade of research and consulting experience, bringing cutting-edge ideas to life with precision and scalability.',
+    linkedin: 'https://www.linkedin.com/in/jan-van-den-herrewegen-7707a8348/',
+  },
+  {
+    name: 'Tim Van den Herrewegen',
+    role: 'Co-founder & CFO',
+    image: '~/assets/images/tim_profile.jpeg',
+    description: '15+ years of experience launching and scaling software products at multinationals and scale-ups. With his background in economics and a strong track record in team leadership and market strategy, Tim is the mind behind our pricing and funding strategy.',
+    linkedin: 'https://www.linkedin.com/in/tim-van-den-herrewegen-b192a317/',
+  },
+  {
+    name: 'Nicolas Decuypere',
+    role: 'Business Development Manager',
+    image: '~/assets/images/nico.jpg',
+    imagePosition: 'top',
+    description: 'Nicolas brings his experience in Legal & Business development to form the partnerships Wattloop needs to grow fast!',
+    linkedin: 'https://www.linkedin.com/in/nicolas-decuypere-2512a5193/',
+  },
+  {
+    name: 'Arne Vlaeminck',
+    role: 'CTO',
+    image: '~/assets/images/arne_cropped.jpeg',
+    description: 'Arne is our tech wizard: with 15+ years of experience in software engineering, he is the architect of our platform and makes our diagnostic process seemless.',
+    linkedin: 'https://www.linkedin.com/in/arne-vlaeminck-8a35ba113/',
+  },
+];
+---
+
+<Layout metadata={metadata}>
+  <Hero tagline="Meet the team">
+    <Fragment slot="title">
+      The people behind <span class="text-accent dark:text-white">Wattloop</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      We unlock the hidden potential in EV batteries through intelligent data analysis.
+      By transforming complex BMS data into instant, actionable battery certificates, we enable true circularity - giving every battery a fair chance at a second life before recycling.
+      Because the most sustainable battery is the one that's already made.
+    </Fragment>
+  </Hero>
+
+  <section class="py-16 lg:py-20">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="grid md:grid-cols-2 gap-8 lg:gap-12">
+        {team.map((member) => (
+          <div class="bg-white dark:bg-slate-800 rounded-lg shadow-lg overflow-hidden p-6 text-center">
+            {member.image && (
+              <div class="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden">
+                <Image
+                  src={member.image}
+                  alt={member.name}
+                  class={`w-full h-full object-cover ${member.imagePosition === 'top' ? 'object-top' : ''}`}
+                  width={150}
+                  height={150}
+                />
+              </div>
+            )}
+            <div>
+              <h3 class="text-xl font-bold mb-1">{member.name}</h3>
+              <p class="text-accent font-medium mb-3">{member.role}</p>
+              <p class="text-muted">{member.description}</p>
+              {member.linkedin && (
+                <a href={member.linkedin} class="inline-flex items-center mt-4 text-accent hover:underline">
+                  Connect on LinkedIn →
+                </a>
+              )}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>

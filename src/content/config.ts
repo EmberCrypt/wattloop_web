@@ -65,6 +65,18 @@ const postCollection = defineCollection({
   }),
 });
 
+const pressCollection = defineCollection({
+  loader: glob({ pattern: ['*.md', '*.mdx'], base: 'src/data/press' }),
+  schema: z.object({
+    publishDate: z.date(),
+    title: z.string(),
+    excerpt: z.string(),
+    draft: z.boolean().optional(),
+    link: z.string().optional(),
+  }),
+});
+
 export const collections = {
   post: postCollection,
+  press: pressCollection,
 };

@@ -16,92 +16,21 @@ const metadata = {
 <Layout metadata={metadata}>
   <!-- Hero Widget ******************* -->
 
-  <Hero
-    actions={[
-      { text: 'Learn more', href: '#features' },
-    ]}
-    image={{ src: '~/assets/images/background-home.png', alt: 'Wattloop Ecoscene' }}
-  >
+  <Hero>
     <Fragment slot="title">
-      Unlock the full potential of your EV <span class="text-accent dark:text-white">Battery</span>
+      Turn end-of-life EV batteries into <span class="text-accent dark:text-white">sellable assets</span>
     </Fragment>
 
     <Fragment slot="subtitle">
       <span class="hidden sm:inline">
-        We maximise <span class="font-semibold">value</span> across the full EV battery lifecycle 
+        We <span class="font-semibold">certify</span> EV batteries for <span class="font-semibold">salvage yards</span> and <span class="font-semibold">recyclers</span>
       </span>
     </Fragment>
   </Hero>
 
-
-   <Features2
-    title="The \u20AC1 billion EV battery <span class='font-semibold text-accent'>problem</span>"
-    subtitle=""
-    items={[
-      {
-        title: 'Lack of trust',
-        description:
-          'A lack of transparency about battery life expectancy & missing standards for EV battery longevity introduces market uncertainty. This makes the EV resale market suffer from a lack of trust.',
-        icon: 'tabler:car',
-      },
-      {
-        title: 'Black box',
-        description:
-          'End-of-first-life EV batteries are a black box which might either catch fire, could power a neighborhood for many more years, or has no life left at all. Which will it be?',
-        icon: 'tabler:question-mark',
-      },
-      {
-        title: 'Lack of data',
-        description:
-          'A lack of quality EV battery data makes the industry bleed money. Needless costly transports, unnecessary downcycling and regulatory uncertainty prevent the 2nd life market to reach its full potential',
-        icon: 'tabler:graph',
-      },
-    ]}
-  >
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Features2>
-
-
-
-  <!-- Features Widget *************** -->
-
-  <Features
-    id="features"
-    tagline="What we do"
-    title="Our products and services"
-    subtitle="To maximise a battery's value throughout its entire lifetime, we source the battery data directly from the BMS to where it matters most to you"
-    items={[
-      {
-        title: 'Battery Pass',
-        description:
-          'A fast, independent, data-driven report that helps second-hand EV resellers sell with confidence and buyers purchase with trust.',
-        icon: 'tabler:e-passport',
-      },
-      {
-        title: 'Second-life Battery Certificate',
-        description:
-    'Wattloop’s Battery Certificate delivers full transparency, independent State of Health data and resale-grade documentation, turning uncertainty into opportunity.',
-        icon: 'tabler:certificate',
-      },
-      {
-        title: 'Monitoring & 2nd Life triage',
-        description:
-          'Wattloops introduces the plug-and-play assessment and monitoring platform that brings clarity, safety, and value to the heart of your battery operations.',
-        icon: 'tabler:search',
-      },
-      {
-        title: 'Data Services',
-        description:
-    'Wattloop Battery Data Services delivers real world battery insights. Independent. Comparable. Actionable.',
-        icon: 'tabler:chart-scatter',
-      }
-    ]}
-  />
-
   <Brands
-      title="Trusted partners"
+      title="Trusted <span class='text-accent'>partners</span>"
+      classes={{ container: 'py-0 -mt-24 md:-mt-36' }}
       icons={[]}
       images={[
         {
@@ -120,8 +49,72 @@ const metadata = {
           src: '~/assets/images/starterslabo.jpg',
           alt: 'Starterslabo',
         },
+        {
+          src: '~/assets/images/didier.png',
+          alt: 'Didier',
+        },
+        {
+          src: '~/assets/images/watt4ever.jpg',
+          alt: 'Watt4Ever',
+        },
+        {
+          src: '~/assets/images/sortbat.png',
+          alt: 'Sortbat',
+        },
+        {
+          src: '~/assets/images/startit_logo.png',
+          alt: 'Start it',
+        },
       ]}
     />
+
+   <Features2
+    title="The EV battery <span class='font-semibold text-accent'>problem</span>"
+    subtitle="The EV battery supply chain operates blind. Salvage yards and recyclers can't assess condition, so they can't recover value. Instead, they just shred or sit there. Meanwhile, buyers won't touch salvaged batteries without proof of safety. Billions in battery assets are being destroyed instead of recovered."
+    items={[
+      {
+        title: 'Salvage yards are sitting on hundreds of EV batteries',
+        description:
+    'Salvage yards hold ~500k euros in EV batteries, but sit blind. Without condition data, buyers won\'t touch them. Worse: one bad battery can catch fire. Result: most batteries sit there for years instead of reentering the market.',
+        icon: 'tabler:car',
+      },
+      {
+        title: 'Recyclers operate blind',
+        description:
+          'Recyclers dismantle EV batteries blind. No condition data = no selective recovery. Everything gets shredded, turning  revenue from module resale into disposal cost or low-margin black mass.',
+        icon: 'tabler:question-mark',
+      },
+    ]}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Features2>
+
+
+
+  <!-- Features Widget *************** -->
+
+  <Features
+    id="features"
+    tagline="What we do"
+    title="We certify your battery to sell your EV battery packs faster"
+    subtitle="Plug in our Wattloop box to the battery's connector and assess electrical safety and resale value instantly"
+    items={[
+      {
+        title: 'Second-life Battery Certificate',
+        description:
+    'Wattloop’s Battery Certificate delivers the state-of-health data your buyers are waiting for to make a confident decision.',
+        icon: 'tabler:certificate',
+      },
+      {
+        title: 'Dismantling triage',
+        description:
+          'Wattloops introduces the plug-and-play assessment platform that enables a recycler\'s operator to safely dismantle EV battery packs and select modules in good condition.',
+        icon: 'tabler:search',
+      },
+    ]}
+  />
 
 
   <!-- CallToAction Widget *********** -->
@@ -138,7 +131,7 @@ const metadata = {
     ]}
   >
     <Fragment slot="title">
-      Unlock the full potential of your EV batteries now!
+      Book a demo now! 
     </Fragment>
   </CallToAction>
 </Layout>

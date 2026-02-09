@@ -1,0 +1,48 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Press',
+};
+---
+
+<Layout metadata={metadata}>
+  <Hero tagline="Newsroom">
+    <Fragment slot="title">
+      Press & <span class="text-accent dark:text-white">Media</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Stay updated with the latest news and announcements from Wattloop.
+    </Fragment>
+  </Hero>
+
+  <section class="py-16 lg:py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+      <h2 class="text-2xl font-bold mb-4">Press releases coming soon</h2>
+      <p class="text-muted">Check back for our latest announcements.</p>
+    </div>
+  </section>
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Contact Press Team',
+        href: '/contact',
+        target: '_self',
+        icon: 'tabler:mail',
+      },
+    ]}
+  >
+    <Fragment slot="title">
+      Media Inquiries
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      For press inquiries, interviews, or additional information, please reach out to our team.
+    </Fragment>
+  </CallToAction>
+</Layout>

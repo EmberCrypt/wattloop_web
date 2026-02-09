@@ -1,0 +1,148 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Careers',
+};
+
+const openPositions = [
+  {
+    title: 'Full Stack Python Developer',
+    type: 'Full-time',
+    location: 'Ghent (Hybrid - min 3 days/week in office)',
+    description: `Wattloop is seeking a dedicated full stack Python Developer. You will be responsible for developing and maintaining our full diagnostics stack.`,
+    responsibilities: [
+      'Device level – CAN communication on Raspberry Pi-based hardware, speaking directly with batteries in the field!',
+      'Core logic: Python services handling automotive diagnostics and MQTT',
+      'Backend: Python APIs',
+      'Frontend: Make beautiful visualisations of the battery data we extract',
+      'DevOps: Docker, CI/CD pipelines, deployment automation',
+    ],
+    whoYouAre: [
+      'Self starter who takes real ownership',
+      'Curious about how and why things work',
+      'Eager to make a difference for a more circular (battery) economy',
+      'You enjoy the speed and chaos of an early-stage startup',
+      'You have good craic',
+    ],
+    qualifications: [
+      'Solid Python skills (2+ years of experience)',
+      'Comfortable with backend development',
+      'Willing to learn frontend basics',
+      'Bonus: experience with CAN bus, automotive protocols, or embedded systems',
+    ],
+    applyEmail: 'info@wattloop.com',
+    applyText: 'Interested? Send a short intro and your CV/GitHub/portfolio to',
+  },
+  {
+    title: 'Marketing Intern',
+    type: 'Internship',
+    location: 'Ghent (Hybrid)',
+    description: `Join Wattloop as a Marketing Intern and help us spread the word about our mission to unlock the hidden potential in EV batteries.`,
+    responsibilities: [
+      'Support social media content creation and management',
+      'Help with marketing campaigns and outreach',
+      'Assist with event preparation and coordination',
+      'Contribute to website and marketing materials',
+    ],
+    whoYouAre: [
+      'Eager to learn and take initiative',
+      'Interested in sustainability and cleantech',
+      'Creative with good communication skills',
+      'Comfortable working in a fast-paced startup environment',
+    ],
+    qualifications: [
+      'Currently pursuing or recently completed a degree in Marketing, Communications, or related field',
+      'Familiarity with social media platforms',
+      'Good written and verbal communication skills',
+      'Bonus: experience with design tools (Canva, Figma, etc.)',
+    ],
+    applyEmail: 'info@wattloop.com',
+    applyText: 'Interested? Send a short intro and your CV to',
+  },
+];
+---
+
+<Layout metadata={metadata}>
+  <Hero tagline="Join us">
+    <Fragment slot="title">
+      <span class="text-accent dark:text-white">Careers</span>
+    </Fragment>
+  </Hero>
+
+  <section class="py-16 lg:py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+      <h2 class="text-2xl font-bold mb-6">Open Positions</h2>
+
+      {openPositions.length > 0 ? (
+        <div class="space-y-8">
+          {openPositions.map((position) => (
+            <div class="border rounded-lg p-6 lg:p-8">
+              <div class="mb-6">
+                <h3 class="text-2xl font-bold mb-2">{position.title}</h3>
+                <p class="text-accent font-medium">{position.type} · {position.location}</p>
+              </div>
+
+              <p class="mb-6">{position.description}</p>
+
+              {position.responsibilities && (
+                <div class="mb-6">
+                  <h4 class="font-bold mb-3">What you'll do</h4>
+                  <ul class="list-disc list-inside space-y-1 text-muted">
+                    {position.responsibilities.map((item) => <li>{item}</li>)}
+                  </ul>
+                </div>
+              )}
+
+              {position.whoYouAre && (
+                <div class="mb-6">
+                  <h4 class="font-bold mb-3">Who you are</h4>
+                  <ul class="list-disc list-inside space-y-1 text-muted">
+                    {position.whoYouAre.map((item) => <li>{item}</li>)}
+                  </ul>
+                </div>
+              )}
+
+              {position.qualifications && (
+                <div class="mb-6">
+                  <h4 class="font-bold mb-3">Qualifications</h4>
+                  <ul class="list-disc list-inside space-y-1 text-muted">
+                    {position.qualifications.map((item) => <li>{item}</li>)}
+                  </ul>
+                </div>
+              )}
+
+              <div class="mt-8 p-4 bg-gray-50 dark:bg-slate-800 rounded-lg">
+                <p class="font-medium">{position.applyText} <a href={`mailto:${position.applyEmail}`} class="text-accent hover:underline">{position.applyEmail}</a></p>
+              </div>
+            </div>
+          ))}
+        </div>
+      ) : (
+        <p class="text-muted">No open positions at the moment. Check back soon!</p>
+      )}
+    </div>
+  </section>
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Get in touch',
+        href: '/contact',
+        target: '_self',
+        icon: 'tabler:mail',
+      },
+    ]}
+  >
+    <Fragment slot="title">
+      Interested in joining?
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Send us your CV and tell us why you'd be a great fit for Wattloop.
+    </Fragment>
+  </CallToAction>
+</Layout>
