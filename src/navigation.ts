@@ -24,5 +24,9 @@ export const footerData = {
   socialLinks: [
     { ariaLabel: 'LinkedIn', icon: 'tabler:brand-linkedin', href: 'https://www.linkedin.com/company/wattloop/' },
   ],
-  footNote: ``,
+  footNote: `
+    <span class="block text-sm text-muted">Wattloop BV</span>
+    <span class="block text-sm text-muted">Wiedauwkaai 51, 9000 Ghent, Belgium</span>
+    <span class="block text-sm text-muted">VAT: BE 1028.171.492</span>
+  `,
 };
