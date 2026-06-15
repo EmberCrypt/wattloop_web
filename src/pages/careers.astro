@@ -9,29 +9,33 @@ const metadata = {
 
 const openPositions = [
   {
-    title: 'Full Stack Python Developer',
+    title: 'Python Backend Developer',
     type: 'Full-time',
-    location: 'Ghent (Hybrid - min 3 days/week in office)',
-    description: `Wattloop is seeking a dedicated full stack Python Developer. You will be responsible for developing and maintaining our full diagnostics stack.`,
+    location: 'Ghent (On-site)',
+    description: `Wattloop provides instant diagnostics for end-of-life EV batteries. Our plug-and-play system assesses battery safety and state-of-health on the spot, pushing all data to the cloud — enabling faster decisions on repair, repurposing, and resale. We serve recyclers, dismantlers, and deep discharge operators who need reliable, affordable alternatives to diagnostic equipment.`,
     responsibilities: [
-      'Device level – CAN communication on Raspberry Pi-based hardware, speaking directly with batteries in the field!',
-      'Core logic: Python services handling automotive diagnostics and MQTT',
-      'Backend: Python APIs',
-      'Frontend: Make beautiful visualisations of the battery data we extract',
-      'DevOps: Docker, CI/CD pipelines, deployment automation',
-    ],
-    whoYouAre: [
-      'Self starter who takes real ownership',
-      'Curious about how and why things work',
-      'Eager to make a difference for a more circular (battery) economy',
-      'You enjoy the speed and chaos of an early-stage startup',
-      'You have good craic',
+      'Build and maintain the REST APIs that power our diagnostic platform',
+      'Manage the data pipeline from device to cloud',
+      'Integrate new battery models into our assessment system',
+      'Own core parts of our Python backend end-to-end',
     ],
     qualifications: [
-      'Solid Python skills (2+ years of experience)',
-      'Comfortable with backend development',
-      'Willing to learn frontend basics',
-      'Bonus: experience with CAN bus, automotive protocols, or embedded systems',
+      '2+ years of professional Python experience',
+      'Strong OOP, API design, and database skills (schema design, query optimization)',
+      'Comfortable owning features end-to-end with minimal hand-holding',
+      'Automotive protocol experience (CAN, UDS) is a plus',
+    ],
+    techStack: [
+      'Python (Flask, Django, FastAPI)',
+      'PostgreSQL, SQLAlchemy',
+      'CAN/UDS automotive protocols (big plus)',
+      'Docker',
+    ],
+    whoYouAre: [
+      'You like having real ownership over what you build',
+      "You're comfortable making calls with incomplete information and iterating fast",
+      'You want to see your work matter, and learn fast',
+      'Most of all, you enjoy what you do and who you do it with',
     ],
     applyEmail: 'info@wattloop.com',
     applyText: 'Interested? Send a short intro and your CV/GitHub/portfolio to',
@@ -92,6 +96,15 @@ const openPositions = [
                   <h4 class="font-bold mb-3">What you'll do</h4>
                   <ul class="list-disc list-inside space-y-1 text-muted">
                     {position.responsibilities.map((item) => <li>{item}</li>)}
+                  </ul>
+                </div>
+              )}
+
+              {position.techStack && (
+                <div class="mb-6">
+                  <h4 class="font-bold mb-3">Tech you'll work with</h4>
+                  <ul class="list-disc list-inside space-y-1 text-muted">
+                    {position.techStack.map((item) => <li>{item}</li>)}
                   </ul>
                 </div>
               )}
